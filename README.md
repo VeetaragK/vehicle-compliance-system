@@ -63,7 +63,7 @@ Service Layer
    ↓
 Repository Layer
    ↓
-MySQL Database
+PostgreSQL Database
 ```
 
 The service layer applies business logic to determine whether compliance documents are **VALID**, **EXPIRING_SOON**, or **EXPIRED** before returning the response.
