@@ -16,7 +16,7 @@ A Spring Boot–based backend system for retrieving and managing vehicle complia
 
 * **Language:** Java
 * **Framework:** Spring Boot
-* **Database:** MySQL
+* **Database:** Postgre SQL
 * **ORM:** Spring Data JPA / Hibernate
 * **API:** REST
 * **Build Tool:** Maven
