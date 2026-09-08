@@ -17,8 +17,8 @@ public class VehicleResponse {
     private String rto;
 
     private RCResponse rc;
-    private InsuranceResponse insuranceResponse;
-    private PUCResponse pucResponse;
+    private InsuranceResponse insurance;
+    private PUCResponse puc;
 
     public VehicleResponse(
             String vehicleNumber,
@@ -33,8 +33,8 @@ public class VehicleResponse {
             String color,
             String rto,
             RCResponse rc,
-            InsuranceResponse insuranceResponse,
-            PUCResponse pucResponse) {
+            InsuranceResponse insurance,
+            PUCResponse puc) {
 
         this.vehicleNumber = vehicleNumber;
         this.ownerName = ownerName;
@@ -48,8 +48,8 @@ public class VehicleResponse {
         this.color = color;
         this.rto = rto;
         this.rc = rc;
-        this.insuranceResponse = insuranceResponse;
-        this.pucResponse = pucResponse;
+        this.insurance = insurance;
+        this.puc = puc;
     }
 
     public String getVehicleNumber() {
@@ -100,11 +100,11 @@ public class VehicleResponse {
         return rc;
     }
 
-    public InsuranceResponse getInsuranceresponse(){
-        return insuranceResponse;
+    public InsuranceResponse getInsurance(){
+        return insurance;
     }
 
-    public PUCResponse getPUCResponse(){
-        return pucResponse;
+    public PUCResponse getPuc(){
+        return puc;
     }
 }

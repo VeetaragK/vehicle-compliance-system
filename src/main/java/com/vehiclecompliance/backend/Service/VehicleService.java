@@ -10,8 +10,7 @@ import com.vehiclecompliance.backend.dto.RCResponse;
 import com.vehiclecompliance.backend.dto.VehicleResponse;
 import com.vehiclecompliance.backend.Repository.VehicleRepository;
 import org.springframework.stereotype.Service;
-import org.springframework.http.HttpStatus;
-import org.springframework.web.server.ResponseStatusException;
+import com.vehiclecompliance.backend.exception.VehicleNotFoundException;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
@@ -43,16 +42,13 @@ public class VehicleService {
         return "VALID";
     }
 
-    public Optional<VehicleResponse> getVehicleByNumber(String vehicleNumber) {
+    public VehicleResponse getVehicleByNumber(String vehicleNumber) {
 
         Optional<Vehicle> vehicleOptional =
                 vehicleRepository.findByVehicleNumber(vehicleNumber);
 
         if (vehicleOptional.isEmpty()) {
-            throw new ResponseStatusException(
-                HttpStatus.NOT_FOUND,
-                "Vehicle not found"
-            );
+            throw new VehicleNotFoundException(vehicleNumber);
         }
 
         Vehicle vehicle = vehicleOptional.get();
@@ -119,6 +115,6 @@ public class VehicleService {
                 pucResponse
         );
 
-        return Optional.of(response);
+        return response;
     }
 }

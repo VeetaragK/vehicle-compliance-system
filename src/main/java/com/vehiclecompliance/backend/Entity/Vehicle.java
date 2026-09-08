@@ -3,8 +3,6 @@ package com.vehiclecompliance.backend.Entity;
 import jakarta.persistence.*;
 import java.time.LocalDate;
 
-import com.vehiclecompliance.backend.dto.PUCResponse;
-
 @Entity
 @Table(name = "vehicles")
 public class Vehicle {
